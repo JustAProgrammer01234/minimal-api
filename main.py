@@ -1,6 +1,11 @@
+from enum import Enum
 from fastapi import FastAPI 
 
 app = FastAPI()
+
+@app.get("/")
+async def main():
+    return "A minimal api scripto made :)"
 
 @app.get("/even/{num}")
 async def is_even(num: int):
